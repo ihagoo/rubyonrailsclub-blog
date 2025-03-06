@@ -51,6 +51,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  # Faker
+  gem "faker"
+  # Spinner
+  gem "tty-spinner"
 end
 
 group :development do
