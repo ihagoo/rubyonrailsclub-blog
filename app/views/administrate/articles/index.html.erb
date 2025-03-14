@@ -1,5 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
+<p>Bem Vindo! <%= current_admin.email %></p>
+
+<%= link_to destroy_admin_session_path, data: { turbo_method: :delete } do %>
+Fazer Logoff
+<% end %>
+
 <% content_for :title, "Articles" %>
 
 <h1>Articles</h1>
