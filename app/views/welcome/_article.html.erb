@@ -5,4 +5,9 @@
         <strong>Data:</strong>
         <%= l(article.created_at, format: :only_date) %>
     </p>
+
+    <p>
+        <%= image_tag article.cover_image.variant(:thumb) if article.cover_image.attached? %>
+    </p>
+    
 </div>

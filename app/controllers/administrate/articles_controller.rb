@@ -26,10 +26,11 @@ module Administrate
     # POST /articles or /articles.json
     def create
       @article = Article.new(article_params)
+      @article.cover_image.attach(article_params[:cover_image])
 
       respond_to do |format|
         if @article.save
-          format.html { redirect_to(@article, notice: "Article was successfully created.") }
+          format.html { redirect_to(administrate_article_url(@article), notice: "Article was successfully created.") }
           format.json { render(:show, status: :created, location: @article) }
         else
           format.html { render(:new, status: :unprocessable_entity) }
@@ -42,7 +43,7 @@ module Administrate
     def update
       respond_to do |format|
         if @article.update(article_params)
-          format.html { redirect_to(@article, notice: "Article was successfully updated.") }
+          format.html { redirect_to(administrate_article_url(@article), notice: "Article was successfully updated.") }
           format.json { render(:show, status: :ok, location: @article) }
         else
           format.html { render(:edit, status: :unprocessable_entity) }
@@ -70,7 +71,7 @@ module Administrate
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.expect(article: [:title, :body])
+      params.expect(article: [:title, :body, :cover_image])
     end
   end
 end
