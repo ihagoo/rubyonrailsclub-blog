@@ -2,5 +2,7 @@
     <p>
         <strong>Title:</strong>
         <%= article.title %>
+        <strong>Data:</strong>
+        <%= l(article.created_at, format: :only_date) %>
     </p>
 </div>

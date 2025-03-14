@@ -34,6 +34,7 @@ gem "solid_cable"
 gem "bootsnap", require: false
 gem "friendly_id", "~>5.5.0"
 gem "devise", "~>4.9"
+gem "rails-i18n", "~> 8.0.0"
 
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "kamal", require: false
