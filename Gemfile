@@ -58,6 +58,8 @@ group :development, :test do
   gem "faker"
   # Spinner
   gem "tty-spinner"
+  # DotEnv
+  gem "dotenv"
 end
 
 group :development do

@@ -355,6 +355,7 @@ DEPENDENCIES
   brakeman
   debug
   devise (~> 4.9)
+  dotenv
   faker
   friendly_id (~> 5.5.0)
   importmap-rails
