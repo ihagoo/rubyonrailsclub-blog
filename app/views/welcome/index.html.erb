@@ -1,7 +1,9 @@
+<%= render "main_banner" %>
+<%= render "articles" %>
+<%= render "categories" %>
 <h1>Artigos</h1>
-
 <div id="articles">
-    <% @articles.each do |article| %>
-        <%= render partial: "article", locals: { article: article } %>
-    <% end %>
+  <% @articles.each do |article| %>
+    <%= render partial: "article", locals: { article: article } %>
+  <% end %>
 </div>

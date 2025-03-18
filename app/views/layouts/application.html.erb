@@ -23,11 +23,8 @@
   </head>
   <body>
     <%= render "layouts/shared/application/header" %>
-    <%= render "layouts/shared/application/main_banner" %>
-    <%= render "layouts/shared/application/articles" %>
-    <%= render "layouts/shared/application/categories" %>
-    <%= render "layouts/shared/application/footer" %>
     <%= yield %>
+    <%= render "layouts/shared/application/footer" %>
     <%= javascript_include_tag "menu", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "posts-grid", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "jquery/jquery1.min", "data-turbo-track": "reload" %>
