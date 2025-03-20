@@ -3,14 +3,11 @@
   <div class="row">
     <h2 class="admin-subtitle">Cadastro de artigo</h2>
     <div class="buttons">
-      <%= link_to new_administrate_article_path, class: "button small"	do %>
-        <!a href="#" class="button small">
+      <a href="#" class="button small" onclick="document.forms['article-form'].submit()">
         <%= image_tag "icons/white/save.svg", alt: "save" %>
         Salvar artigo
-      <% end %>
-    </a>
+      </a>
+    </div>
   </div>
+  <%= render "form", article: @article %>
 </div>
-</div>
-
-<%= render "form", article: @article %>
