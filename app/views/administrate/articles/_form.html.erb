@@ -33,9 +33,31 @@
       destroy_cover_image_administrate_article_path(article),
       data: {"turbo-confirm": "Tem certeza?", "turbo-method": :delete } if article.cover_image.attached? %>
   </div>
-  
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+<div class="row">
+  <form action="#" class="form">
+    <div class="input-row">
+      <div class="input-container">
+        <label for="#" class="label">Título</label>
+        <input type="text" placeholder="Digite aqui o título do post" class="input">
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <label for="#" class="label">Descrição</label>
+        <input type="text" placeholder="Digite aqui a descrição do post" class="input">
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <label for="#" class="label">Conteúdo</label>
+        <textarea rows="18" class="textarea" placeholder="Escreva aqui o conteúdo do post"></textarea>
+      </div>
+    </div>
+  </form>
+</div>
