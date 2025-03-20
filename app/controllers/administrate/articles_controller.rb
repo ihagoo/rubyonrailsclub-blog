@@ -56,7 +56,9 @@ module Administrate
       @article.destroy!
 
       respond_to do |format|
-        format.html { redirect_to(articles_path, status: :see_other, notice: "Artigo apagado com sucesso!") }
+        format.html do
+          redirect_to(administrate_articles_path, status: :see_other, notice: "Artigo apagado com sucesso!")
+        end
         format.json { head(:no_content) }
       end
     end
