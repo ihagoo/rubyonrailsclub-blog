@@ -19,6 +19,7 @@
     <%= yield :head %>
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <%= javascript_importmap_tags %>
   </head>
   <body>
@@ -29,5 +30,19 @@
     <%= javascript_include_tag "posts-grid", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "jquery/jquery1.min", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "slick/slick.min", "data-turbo-track": "reload" %>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <% if notice %>
+      <script>
+        Toastify({
+          text: "<%= notice %>",
+          duration: 3000,
+          style: {
+            background: "green",
+          }
+        }).showToast();
+      </script>
+    <% end %>
+
   </body>
 </html>
