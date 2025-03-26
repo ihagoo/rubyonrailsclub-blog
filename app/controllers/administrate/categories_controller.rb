@@ -2,7 +2,7 @@
 
 module Administrate
   class CategoriesController < AdministrateController
-    # before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
+    before_action :set_category, only: [:show, :edit, :update, :destroy]
     # before_action :set_categories, only: [:new, :edit, :show]
 
     # GET /categories or /categories.json
@@ -19,8 +19,23 @@ module Administrate
       @category = Category.new
     end
 
-    # GET /articles/1/edit
+    # GET /categories/1/edit
     def edit
+    end
+
+    def update
+      respond_to do |format|
+        if @category.update(category_params)
+          format.html { redirect_to(administrate_category_url(@category), notice: "Categoria atualizada com sucesso!") }
+          format.json { render(:show, status: :ok, location: @category) }
+        else
+          format.html { render(:edit, status: :unprocessable_entity) }
+          format.json { render(json: @category.errors, status: :unprocessable_entity) }
+        end
+      end
+    end
+
+    def destroy
     end
 
     # POST /articles or /articles.json
@@ -39,6 +54,10 @@ module Administrate
     end
 
     private
+
+    def set_category
+      @category = Category.find(params[:id])
+    end
 
     def category_params
       params.require(:category).permit(:name)
