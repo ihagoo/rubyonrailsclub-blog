@@ -12,13 +12,17 @@
 
 # Create default admin users
 
-admins = ["admin@admin.com", "test@test.com"]
+admins = {
+  "admin@admin.com" => "Administrador",
+  "teste@teste.com" => "Teste",
+}
 
-admins.each do |email|
+admins.each do |email, name|
   next if Admin.find_by(email: email)
 
   Admin.create!(
-    email: email,
+    email:,
+    name:,
     password: ENV["DEFAULT_PASSWORD"],
     password_confirmation: ENV["DEFAULT_PASSWORD"],
   )
