@@ -6,5 +6,7 @@
         <%= form.text_field :name, disabled: (params[:action] == "show"), placeholder: "Digite aqui o nome da categoria", class: "input" %>
       </div>
     </div>
+    <%= button_to "Remover categoria", [:administrate, @category], data: { turbo: false }, method: :delete, class: "button small" if (params[:action] == "show") %>
+    <%= form.submit style: "display: none" %>
   <% end %>
 </div>

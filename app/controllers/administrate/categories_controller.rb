@@ -36,6 +36,20 @@ module Administrate
     end
 
     def destroy
+      respond_to do |format|
+        format.html do
+          if @category.articles.count > 0
+            redirect_to(
+              administrate_categories_path,
+              alert: "Existem artigos associados a essa categoria! Não é possivel apaga-la!",
+            )
+          else
+            @category.destroy!
+            redirect_to(administrate_categories_path, status: :see_other, notice: "Categoria apagada com sucesso!")
+          end
+        end
+        format.json { head(:no_content) }
+      end
     end
 
     # POST /articles or /articles.json
