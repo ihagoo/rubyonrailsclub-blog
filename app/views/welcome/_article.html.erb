@@ -1,6 +1,5 @@
-<a href="post.html" class="item">
+<%= link_to article_path(article), class: "item" do %>
   <%= image_tag(cover_image_fallback(article), class: "item-image", alt: "article image") %>
-
   <div class="item-row">
     <div class="item-category">Backend</div>
     <div class="item-comments">25</div>
@@ -12,4 +11,4 @@
     <div class="item-author">Jackson Pires</div>
     <div class="item-date">15 de set</div>
   </div>
-</a>
+<% end %>
