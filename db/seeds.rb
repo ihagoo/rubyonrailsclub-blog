@@ -27,3 +27,9 @@ admins.each do |email, name|
     password_confirmation: ENV["DEFAULT_PASSWORD"],
   )
 end
+
+User.create!(
+  email: "user@user.com",
+  password: ENV["DEFAULT_PASSWORD"],
+  password_confirmation: ENV["DEFAULT_PASSWORD"],
+)
