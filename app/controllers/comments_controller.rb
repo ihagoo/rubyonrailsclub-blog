@@ -16,6 +16,26 @@ class CommentsController < ApplicationController
     end
   end
 
+  def like
+    @article = Article.friendly.find(params[:article_id])
+
+    if Comment.find(params[:id]).increment!(:like)
+      redirect_to(article_path(@article), notice: "Like registrado!")
+    else
+      redirect_to(article_path(@article), alert: "Não foi possivel registrar o like!")
+    end
+  end
+
+  def dislike
+    @article = Article.friendly.find(params[:article_id])
+
+    if Comment.find(params[:id]).increment!(:dislike)
+      redirect_to(article_path(@article), notice: "Deslike registrado!")
+    else
+      redirect_to(article_path(@article), alert: "Não foi possivel registrar o deslike!")
+    end
+  end
+
   private
 
   def comments_params
