@@ -202,7 +202,7 @@ GEM
       racc
     pdf-core (0.10.0)
     pg (1.5.9)
-    pkg-config (1.6.0)
+    pkg-config (1.6.2)
     pp (0.6.2)
       prettyprint
     prawn (2.5.0)
@@ -278,7 +278,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rmagick (6.1.1)
+    rmagick (6.1.2)
       observer (~> 0.1)
       pkg-config (~> 1.4)
     rubocop (1.75.1)
